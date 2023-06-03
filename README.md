@@ -4,12 +4,16 @@ This website has been developed to facilitate the extraction of text from images
 
 ## Technical Overview
 Streamlit was utilized to quickly build the UI of website.
+
 EasyOCR was leveraged to extract the english language from upload image, since it provide faster results than Tesseract OCR with competitive accuracy.
+
 For the task name entity recognition, it provide efficient and accurate NER capabilities (spacy 3.5.3 release on May 15, 2023).
+
 For summarization task, the standard summarization pipeline on HuggingFace was prepered for that task (sshleifer/distilbart-cnn-12-6).
 
 Advanced setting: 
 GPU could be utilzied for faster extract text from image, and the summarization process. Which will be activated when the GPU is avaiable on your machine through the check command (if torch.cuda.is_available()).
+
 Since the limited of our account, OpenAI API chatbox was added as an future expanding. You should set "YOUR_OPENAI_API_KEY" for the variable "openAI_API_key" on the source code.
 
 ## How to Install
@@ -29,4 +33,5 @@ pip install -r requirements.txt
 
 ## How to run
 Activate the virtual environment before running
+
 streamlit run main.py
