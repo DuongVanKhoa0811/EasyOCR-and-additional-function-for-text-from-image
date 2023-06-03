@@ -15,12 +15,16 @@ Since the limited of our account, OpenAI API chatbox was added as an future expa
 ## How to Install
 ### On Windows
 python -m venv myenv
+
 myenv\Scripts\activate
+
 pip install -r requirements.txt
 
 ### On Mac
 python3 -m venv myenv
+
 source myenv/bin/activate
+
 pip install -r requirements.txt
 
 ## How to run
