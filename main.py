@@ -14,11 +14,6 @@ import subprocess
 import openai
 
 
-@st.cache_resource        
-def define_openai_key(openAI_API_key):
-    openai.api_key = openAI_API_key
-
-
 # this class was built to store the PDF Configuration
 class PDFConfig():
     def __init__(self, font_size=20, color='Black') -> None:
@@ -31,6 +26,11 @@ class PDFConfig():
         """
         self.font_size = font_size
         self.color = color
+
+
+@st.cache_resource        
+def define_openai_key(openAI_API_key):
+    openai.api_key = openAI_API_key
 
 
 @st.cache_resource        
@@ -262,7 +262,7 @@ def streamlit_app():
                         download_button = st.download_button(label="Download PDF", data=f, file_name="output.pdf")
 
                 with st.expander("Custom text for summarization"):
-                    text_input = st.text_input('Input text for summarization')
+                    text_input = st.text_area('Input text for summarization')
                     if st.button("Process"):
                         max_length = len((str)(text_input).split(' '))
                         min_length = (int)(max_length / 2)
@@ -277,13 +277,13 @@ def streamlit_app():
                             response = generate_response(user_input)
                             st.text_area("AI Response", value=response)
                     else:
-                        st.write("Your have to set the API key for openAI_API_key variable to use this function!")
                         st.write("Since it requires a fee for the API, currently I don't activate this function!")
+                        st.write("You could set \"YOUR_OPENAI_API_KEY\" for the variable \"openAI_API_key\" to use this function!")
 
                 
     elif section == "About":
         st.title("About")
-        st.write("This website has been developed to facilitate the extraction of text from images through the utilization of the EasyOCR library. Moreover, in addition to this capability, various other APIs have been seamlessly integrated to extract higher-level meaning, including name entity recognition for detecting human names and text summarization employing the Hugginface framework.")
+        st.write("This website has been developed to facilitate the extraction of text from images through the utilization of the EasyOCR library. Moreover, in addition to this capability, various other APIs have been seamlessly integrated to extract higher-level meaning, including name entity recognition for detecting human names and text summarization employing the Huggingface framework.")
         st.write("Thanks to my application in the **Cinnamon AI Bootcamp**, which motivated me for constructing this website from scratch with the support from Streamlit library for fast UI building. This endeavor was made to represent my AI research and engineering skills to deliver **a quick demo application**.")
         st.write("My gmail: dvkhoa19@apcs.fitus.edu.vn")
         st.write("My phone number: 0343623811")
@@ -292,8 +292,8 @@ def streamlit_app():
 
     elif section == "Help":
         st.title("Help")
-        st.write("The expander **\'Custom text for summarization\'** was added to support the summarization process. Since the raw summarization after text processing gets the content from concatenating all results of EasyOCR, which could be not appropriate for specific cases. You can utilize this expander for summarizing the specific paragraph.")
         st.write("The expander **\'PDF Download and Configuration\'**  act as an interface to config some pdf format and download file. Currently, color and size was two configurations, that you are free to choose from.")
+        st.write("The expander **\'Custom text for summarization\'** was added to support the summarization process. Since the raw summarization after text processing gets the content from concatenating all results of EasyOCR, which could be not appropriate for specific cases. You can utilize this expander for summarizing the specific paragraph.")
         st.write("You can leverage additional tools to gain a deeper utilize of the text extraction: https://chat.openai.com/, https://bard.google.com/?hl=en")
 
 if __name__ == '__main__':
