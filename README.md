@@ -1,6 +1,6 @@
 # EasyOCR-and-additional-function-for-text-from-image
 ## Introduction
-This website has been developed to facilitate the extraction of text from images through the utilization of the EasyOCR library. Moreover, in addition to this capability, various other APIs have been seamlessly integrated to extract higher-level meaning, including name entity recognition for detecting human names and text summarization employing the Huggingface framework.
+This website has been developed to facilitate the extraction of text from images through the utilization of the EasyOCR library. Moreover, in addition to this capability, others APIs have been seamlessly integrated to extract higher-level meaning, including name entity recognition for detecting human names and text summarization employing the Huggingface framework.
 
 ## Technical Overview
 **Streamlit** was utilized to quickly build the UI of the website.
