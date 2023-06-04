@@ -17,6 +17,7 @@ Advanced setting:
 Since the limitation of our account, the **OpenAI API chatbox** was added as a future expanding. You should set "YOUR_OPENAI_API_KEY" for the variable "openAI_API_key" on the source code to activate this function.
 
 ## How to Install
+version of pip: 23.1.2
 ### On Windows
 python -m venv myenv
 
