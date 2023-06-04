@@ -14,7 +14,7 @@ For the **summarization** task, the standard summarization pipeline on **Hugging
 Advanced setting: 
 **GPU** could be utilized for faster extract text from images, and the summarization process. Which will be activated when the GPU is available on your machine through the check command (if torch.cuda.is_available()).
 
-Since the limitation of our account, the **OpenAI API chatbox** was added as a future expanding. You should set "YOUR_OPENAI_API_KEY" for the variable "openAI_API_key" on the source code.
+Since the limitation of our account, the **OpenAI API chatbox** was added as a future expanding. You should set "YOUR_OPENAI_API_KEY" for the variable "openAI_API_key" on the source code to activate this function.
 
 ## How to Install
 ### On Windows
